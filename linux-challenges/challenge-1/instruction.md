@@ -32,8 +32,8 @@ vgcreate dba_storage /dev/vdb1 /dev/vdc1
 lvcreate -n volume_1 -l 100%FREE dba_storage
 ```
 > [INFO]
-> use flag `-l 100%FREE` for get all storage available from VG.
-> use flag `-L 500M` for get some storage available from VG. 
+> - use flag `-l 100%FREE` for get all storage available from VG.
+> - use flag `-L 500M` for get some storage available from VG. 
 ---
 
 #### Format with XFS
@@ -58,8 +58,8 @@ sudo vi /etc/fstab
 /dev/mapper/dba_storage-volume_1 /mnt/dba_storage xfs defaults 0 0
 ```
 > [INFO]
-> use command `lvdisplay` for get information /dev/mapper/dba_storage-volume_1
-> use command `lsblk /dev/mapper/dba_storage-volume_1` for get UUID.
+> - use command `lvdisplay` for get information /dev/mapper/dba_storage-volume_1
+> - use command `lsblk /dev/mapper/dba_storage-volume_1` for get UUID.
 ---
 
 #### Make new group dba_users and merge bob user to this group, 
