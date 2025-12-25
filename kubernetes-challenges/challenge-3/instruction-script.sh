@@ -111,6 +111,7 @@ spec:
   type: NodePort
 status:
   loadBalancer: {}
+EOF
 
 # Create result deployment
 kubectl create deployment result \ 
@@ -138,13 +139,9 @@ spec:
   type: NodePort
 status:
   loadBalancer: {}
-  
+EOF
 
-
-
-
-
-
-
-
-
+# we can use declarative manifest when we want to deploy nodeport service
+# firstly, can run this imperative command : 
+# kubectl expose <RESOURCE> <NAME> --name <SVC_NAME> --port <PORT> --target-port <T_PORT> --type NodePort --dry-run=client -o yaml > svc.yaml
+# and then, we add NodePort: 30001 in scope ports {}.
